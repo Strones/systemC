@@ -33,22 +33,22 @@ SC_MODULE (driver)
 int sc_main (int argc, char *argj[]){
 	
 	// Setting up new signals
-	sc_signal <bool> m_a, m_b;
+	sc_signal <bool> m_x, m_y;
 	sc_signal <bool> m_c, m_s;
 	
 	// Creating a driver
 	driver DRIVER ("driver_half_adder");
 	
 	// Adding signals to the driver
-	DRIVER.d_a (m_a);
-	DRIVER.d_b (m_b);
+	DRIVER.d_a (m_x);
+	DRIVER.d_b (m_y);
 
 	// Creating half-adder
 	half_adder HA ("half-adder");
 	
 	// Adding signals to HA
-	HA.a (m_a);
-	HA.b (m_b);
+	HA.x (m_x);
+	HA.y (m_y);
 	HA.c (m_c);
 	HA.s (m_s);
 	
@@ -56,8 +56,8 @@ int sc_main (int argc, char *argj[]){
 	sc_trace_file *trace = sc_create_vcd_trace_file ("HALFADDER");
 
 
-	sc_trace (trace, m_a, "a");
-	sc_trace (trace, m_b, "b");
+	sc_trace (trace, m_x, "x");
+	sc_trace (trace, m_y, "y");
 	sc_trace (trace, m_s, "sum");
 	sc_trace (trace, m_c, "carry");
 

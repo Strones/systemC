@@ -1,7 +1,5 @@
-// full_adder_tb.cpp
+#include "full_adder.h"
 
-#include "half_adder.h"
-#include "or.h"
 /*
      Full-Adder
  |a|b|cin|sum|cout|
@@ -22,20 +20,20 @@ SC_MODULE (driver)
 
 	void my_process()
 	{
-		sc_uint<3> combo; //3 bit lengths
-		combo = 0; // combinations for full-adder (8)
+		sc_uint<3> combinations; // 3 bit lengths
+		combinations = 0; // combinations for full-adder (8)
 
 		while(1)
 		{
-			d_a   = combo[2];
-			d_b   = combo[1];
-			d_cin = combo[0];
+			d_a   = combinations[2];
+			d_b   = combinations[1];
+			d_cin = combinations[0];
 
 			wait(1,SC_NS);
 
-			combo++;
+			combinations++;
 
-			if(combo == 0){
+			if(combinations == 0){
 				sc_stop();
 			}
 		}
@@ -50,7 +48,7 @@ SC_MODULE (driver)
 int sc_main (int argc, char *argv[]){
 
 	// Setting up signals
-	sc_signal <bool> x, y, cin, cout, sum, or_1, or_2, z;
+	sc_signal <bool> x, y, cin, cout, sum;
 
 
 	// Creating a driver
@@ -61,6 +59,16 @@ int sc_main (int argc, char *argv[]){
 	DRIVER.d_b   (y);
 	DRIVER.d_cin (cin);
 
+	// Creating FULLADDER module
+	full_adder FA ("full-adder");
+
+	// Adding signals to module FA
+	FA.x     (x);
+	FA.y     (y);
+	FA.cin   (cin);
+	FA.cout  (cout);
+	FA.sum  (sum);
+/*
 	// Creating modules
 	half_adder HA1 ("half-adder1");
 	half_adder HA2 ("half-adder2");
@@ -80,7 +88,7 @@ int sc_main (int argc, char *argv[]){
 	OR.x (or_1);
 	OR.y (or_2);
 	OR.z (cout);
-  	
+*/	
 	//Creating trace file
 	sc_trace_file *trace = sc_create_vcd_trace_file ("FULLADDER");
 

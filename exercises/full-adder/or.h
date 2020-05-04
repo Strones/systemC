@@ -17,5 +17,5 @@ SC_MODULE(or_module){
 // Module or
 void or_module::or_module_process() {
 	
-	z.write (x.read() ^ y.read()); // Half-adder a,b inputs, sum output
+	z.write (x.read() | y.read()); 
 }
