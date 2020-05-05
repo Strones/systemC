@@ -1,2 +1,2 @@
-main: half_adder_tb.cpp
-	./systemc half_adder_tb.cpp
+main: half_adder_main.cpp
+	./systemc half_adder_main.cpp

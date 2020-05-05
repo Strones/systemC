@@ -5,8 +5,8 @@
 
 SC_MODULE(half_adder){
 
-	sc_in<bool> x, y; // Inputs of HA 
-	sc_out<bool> c,s; // Ouputs of HA Carry, Sum
+	sc_in<sc_logic> x, y; // Inputs of HA 
+	sc_out<sc_logic> c,s; // Ouputs of HA Carry, Sum
 
 	void half_adder_process(); // process
 
@@ -20,14 +20,14 @@ SC_MODULE(half_adder){
 // Module half-adder
 void half_adder::half_adder_process() {
 	
-	s.write (x.read() ^ y.read()); // Half-adder a,b inputs, sum output
+	s.write (x.read() ^ y.read()); // Half-adder x,y inputs, sum output
 	c.write (x.read() & y.read()); // Half-adder carry output
 }
 
 
 /*
     Half-adder
-  |a|b|sum|carry|
+  |x|y|sum|carry|
   |0|0| 0 |  0  |
   |0|1| 1 |  0  |
   |1|0| 1 |  0  |
