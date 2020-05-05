@@ -15,24 +15,6 @@ SC_MODULE(nbit_adder){
 	SC_CTOR(nbit_adder): fa1("FA1"), fa2("FA2"), fa3("FA3"), fa4("FA4"), fa5("FA5"), fa6("FA6"), fa7("FA7"), fa8("FA8"){
 
 		//Connect everything like in the block diagram ofthe Carry-Ripple-Adder
-		fa1.x(x_1);
-		fa1.y(y_2);
-		fa1.cin(ci);
-		fa1.cout(S1);
-		fa1.sum(sum_1);
-
-		fa2.x(x_2);
-		fa2.y(y_2);
-		fa2.cin(S1);
-		fa2.cout(S2);
-		fa2.sum(sum_2);
-
-		fa3.x(x_3);
-		fa3.y(y_3);
-		fa3.cin(S2);
-		fa3.cout(S3);
-		fa3.sum(sum_3);
-
 		fa4.x(x_4);
 		fa4.y(y_4);
 		fa4.cin(S3);
