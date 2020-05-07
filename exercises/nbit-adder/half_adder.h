@@ -1,12 +1,11 @@
 //half adder
 
-#include <stdio.h>
 #include "systemc.h"
 
 SC_MODULE(half_adder){
 
-	sc_in<sc_logic> x, y; // Inputs of HA 
-	sc_out<sc_logic> c,s; // Ouputs of HA Carry, Sum
+	sc_in<bool> x, y; // Inputs of HA 
+	sc_out<bool> c,s; // Ouputs of HA Carry, Sum
 
 	void half_adder_process(); // process
 

@@ -6,13 +6,15 @@
 
 SC_MODULE(full_adder){
 	
-	sc_in<sc_logic> x,y,cin;
-	sc_out<sc_logic> sum,cout;
+	sc_in<bool> x,y,cin;
+	sc_out<bool> sum,co;
+	
+	sc_in<bool> clk;
 
 	half_adder ha1, ha2;
 	or_module or1;
 
-	sc_signal<sc_logic> S1, S2, S3;
+	sc_signal<bool> S1, S2, S3;
 
 	SC_CTOR(full_adder) : ha1("HA1"), ha2("HA2"), or1("OR1"){
 	// Connect everything like in the block diagram	
@@ -26,7 +28,9 @@ SC_MODULE(full_adder){
 		ha2.s(sum);
 		or1.x(S1); 
 		or1.y(S3); 
-		or1.z(cout);
-		
+		or1.z(co);
+
+		sensitive << clk;
+
 	}
 };

@@ -21,7 +21,9 @@ SC_MODULE(testbench){
 		sc_assert(sum == SC_LOGIC_0);
 		sc_assert(carry == SC_LOGIC_0);
 		wait();
-		
+		cout << "" << endl;
+		cout << "" << endl;
+		cout << "Halfadder" << endl;	
 		cout << "---------" << endl;
 		//Setting up the truth table
 		cout << "|x|y|c|s|" << endl;		

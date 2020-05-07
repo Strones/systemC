@@ -1,0 +1,290 @@
+$date
+     May 07, 2020       20:04:20
+$end
+
+$version
+ SystemC 2.3.3-Accellera --- Apr 27 2020 09:32:48
+$end
+
+$timescale
+     1 ns
+$end
+
+$scope module SystemC $end
+$var wire    1  aaaaa  x_0       $end
+$var wire    1  aaaab  x_1       $end
+$var wire    1  aaaac  x_2       $end
+$var wire    1  aaaad  x_3       $end
+$var wire    1  aaaae  x_4       $end
+$var wire    1  aaaaf  x_5       $end
+$var wire    1  aaaag  x_6       $end
+$var wire    1  aaaah  x_7       $end
+$var wire    1  aaaai  y_0       $end
+$var wire    1  aaaaj  y_1       $end
+$var wire    1  aaaak  y_2       $end
+$var wire    1  aaaal  y_3       $end
+$var wire    1  aaaam  y_4       $end
+$var wire    1  aaaan  y_5       $end
+$var wire    1  aaaao  y_6       $end
+$var wire    1  aaaap  y_7       $end
+$var wire    1  aaaaq  sum_0       $end
+$var wire    1  aaaar  sum_1       $end
+$var wire    1  aaaas  sum_2       $end
+$var wire    1  aaaat  sum_3       $end
+$var wire    1  aaaau  sum_4       $end
+$var wire    1  aaaav  sum_5       $end
+$var wire    1  aaaaw  sum_6       $end
+$var wire    1  aaaax  sum_7       $end
+$var wire    1  aaaay  cout       $end
+$var wire    1  aaaaz  clk       $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+0aaaaa
+0aaaab
+0aaaac
+0aaaad
+0aaaae
+0aaaaf
+0aaaag
+0aaaah
+0aaaai
+0aaaaj
+0aaaak
+0aaaal
+0aaaam
+0aaaan
+0aaaao
+0aaaap
+0aaaaq
+0aaaar
+0aaaas
+0aaaat
+0aaaau
+0aaaav
+0aaaaw
+0aaaax
+0aaaay
+1aaaaz
+$end
+
+#5
+0aaaaz
+
+#10
+1aaaaa
+1aaaaf
+1aaaaj
+1aaaak
+1aaaan
+1aaaao
+1aaaap
+1aaaaz
+
+#15
+0aaaaz
+
+#20
+1aaaaq
+1aaaar
+1aaaas
+1aaaay
+1aaaaz
+
+#25
+0aaaaz
+
+#30
+1aaaaz
+
+#35
+0aaaaz
+
+#40
+1aaaaz
+
+#45
+0aaaaz
+
+#50
+1aaaaz
+
+#55
+0aaaaz
+
+#60
+1aaaaz
+
+#65
+0aaaaz
+
+#70
+1aaaaz
+
+#75
+0aaaaz
+
+#80
+1aaaaz
+
+#85
+0aaaaz
+
+#90
+1aaaaz
+
+#95
+0aaaaz
+
+#100
+1aaaaz
+
+#105
+0aaaaz
+
+#110
+1aaaac
+1aaaad
+1aaaai
+0aaaaj
+1aaaal
+1aaaam
+0aaaan
+1aaaaz
+
+#115
+0aaaaz
+
+#120
+0aaaaq
+0aaaas
+1aaaat
+1aaaaz
+
+#125
+0aaaaz
+
+#130
+1aaaaz
+
+#135
+0aaaaz
+
+#140
+1aaaaz
+
+#145
+0aaaaz
+
+#150
+1aaaaz
+
+#155
+0aaaaz
+
+#160
+1aaaaz
+
+#165
+0aaaaz
+
+#170
+1aaaaz
+
+#175
+0aaaaz
+
+#180
+1aaaaz
+
+#185
+0aaaaz
+
+#190
+1aaaaz
+
+#195
+0aaaaz
+
+#200
+1aaaaz
+
+#205
+0aaaaz
+
+#210
+0aaaad
+0aaaai
+0aaaak
+0aaaal
+1aaaan
+1aaaaz
+
+#215
+0aaaaz
+
+#220
+1aaaaq
+0aaaar
+1aaaas
+0aaaat
+1aaaau
+1aaaaz
+
+#225
+0aaaaz
+
+#230
+1aaaaz
+
+#235
+0aaaaz
+
+#240
+1aaaaz
+
+#245
+0aaaaz
+
+#250
+1aaaaz
+
+#255
+0aaaaz
+
+#260
+1aaaaz
+
+#265
+0aaaaz
+
+#270
+1aaaaz
+
+#275
+0aaaaz
+
+#280
+1aaaaz
+
+#285
+0aaaaz
+
+#290
+1aaaaz
+
+#295
+0aaaaz
+
+#300
+1aaaaz
+
+#305
+0aaaaz
+
+#310

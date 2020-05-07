@@ -2,8 +2,8 @@
 
 SC_MODULE(or_module){
 
-	sc_in<sc_logic> x, y; // Inputs of OR 
-	sc_out<sc_logic> z; // Ouputs of OR
+	sc_in<bool> x, y; // Inputs of OR 
+	sc_out<bool> z; // Ouputs of OR
 
 	void or_module_process(); // process
 
