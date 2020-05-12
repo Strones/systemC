@@ -15,31 +15,11 @@ SC_MODULE(generate){
 		srand((unsigned) time(0));
 		wait(10,SC_NS);
 
-		cout << "Generating random values..." << endl;
-		
 		// Generates random values
 		for(int i = 0; i < 8; i++){
 			x[i] =  rand() % 2;
 			y[i] =  rand() % 2;
-			cout << "x["<<i<<"] = " << x[i] << ", y["<<i<<"]  = " << y[i] << endl;
 		}
-		wait(100,SC_NS);
-
-		for(int i = 0; i < 8; i++){
-			x[i] = rand() % 2;
-			y[i] = rand() % 2;
-			cout << "x["<<i<<"] = " << x[i] << ", y["<<i<<"]  = " << y[i] << endl;
-		}
-		wait(100,SC_NS);
-
-		for(int i = 0; i < 8; i++){
-			x[i] = rand() % 2;
-			y[i] = rand() % 2;
-			cout << "x["<<i<<"] = " << x[i] << ", y["<<i<<"]  = " << y[i] << endl;
-		}
-
-		wait(100,SC_NS);
-		sc_stop();
 	}
 
 	SC_CTOR(generate) : x("x_value", 8), y("y_value", 8){

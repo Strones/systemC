@@ -3,6 +3,7 @@
 #include "generate.h"
 #include <stdio.h>
 #include "assertions.h"
+#include "monitor.h"
 
 
 int sc_main (int argc, char* argv[]){
@@ -19,20 +20,31 @@ int sc_main (int argc, char* argv[]){
 	// Assertion
 	assertions assertion("Assertion");
 	for(int i = 0; i < 8; i++){
-		assertion.x[i] (x[i]);
-		assertion.y[i] (y[i]);
+		assertion.x[i]   (x[i]);
+		assertion.y[i]   (y[i]);
 		assertion.sum[i] (sum[i]);	
 	}
+	assertion.clk (tb_clk);
 	assertion.carry (co);
 	
 	// Generate inputs
 	generate gen1("gen1_inputs");
 	for(int i = 0; i < 8; i++){
-		gen1.x[i] (x[i]);
-		gen1.y[i] (y[i]);
+			gen1.x[i] (x[i]);
+			gen1.y[i] (y[i]);
 	}
+
 	gen1.clk (tb_clk);
 	
+	// Monitor generated values
+	monitor monitor1("monitor_1");
+	monitor1.clk (tb_clk);
+	for(int i = 0; i < 8; i++){
+		monitor1.x[i] (x[i]);
+		monitor1.y[i] (y[i]);
+	}
+	
+
 	// Creating Nbit_Adder module
 	nbit_adder nbitadder ("8bitadder", 8);
 	nbitadder.clk (tb_clk);
@@ -41,6 +53,7 @@ int sc_main (int argc, char* argv[]){
 		nbitadder.y[i]       (y[i]);
 		nbitadder.sum_out[i] (sum[i]);
 	}
+
 	nbitadder.co (co);
 
 	//Creating trace file

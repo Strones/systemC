@@ -6,10 +6,12 @@ SC_MODULE(assertions){
 
 	sc_vector<sc_in<bool>> x,y,sum;
 	sc_in<bool> carry;
+	sc_in<bool> clk;
 
 	void start_assertion(){
 		sc_uint<8> int_x, int_y;
 		sc_uint<9> int_sum;
+		
 
 		cout << "Asserting..."<< endl;
 
@@ -32,14 +34,11 @@ SC_MODULE(assertions){
 				cout << "Assertion Result: FAIL"<< endl;
 			}
 			sc_assert((int_x + int_y) == int_sum);
-			cout << "Assertion Result: PASS" << endl;
 		}
 	}
 
 	SC_CTOR(assertions) : x("x_input", 8), y("y_input", 8), sum("sum_input", 8){
 		SC_THREAD(start_assertion);
-		for(int i = 0; i < 8; i++){
-			sensitive << x[i] << y[i];
-		}
+		sensitive << clk.pos();
 	}
 };
