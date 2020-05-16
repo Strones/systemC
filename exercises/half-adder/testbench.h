@@ -13,7 +13,7 @@ SC_MODULE(testbench){
 
 	void stim_gen(){
 	
-			// Going through the different cases of the truth table
+		// Going through the different cases of the truth table
 		// x = 0, y = 0
 		x.write(SC_LOGIC_0);
 		y.write(SC_LOGIC_0);

@@ -5,6 +5,7 @@
 #include "assertions.h"
 #include "monitor.h"
 
+#define NUMBER_OF_ADDERS 8 // changing this number -> change trace files
 
 int sc_main (int argc, char* argv[]){
 
@@ -13,13 +14,13 @@ int sc_main (int argc, char* argv[]){
 	cout<<""<<endl;
 	cout << "--------------------------------------------------------------" << endl;
 
-	sc_vector<sc_signal<bool>> x("x_signals", 8), y("y_signals", 8), sum("sum_signals", 8);
+	sc_vector<sc_signal<bool>> x("x_signals", NUMBER_OF_ADDERS), y("y_signals", NUMBER_OF_ADDERS), sum("sum_signals", NUMBER_OF_ADDERS);
 	sc_signal<bool> co;
 	sc_clock tb_clk("tb_clk", 10, SC_NS, 0.5);
 
 	// Assertion
 	assertions assertion("Assertion");
-	for(int i = 0; i < 8; i++){
+	for(int i = 0; i < NUMBER_OF_ADDERS; i++){
 		assertion.x[i]   (x[i]);
 		assertion.y[i]   (y[i]);
 		assertion.sum[i] (sum[i]);	
@@ -29,7 +30,7 @@ int sc_main (int argc, char* argv[]){
 	
 	// Generate inputs
 	generate gen1("gen1_inputs");
-	for(int i = 0; i < 8; i++){
+	for(int i = 0; i < NUMBER_OF_ADDERS; i++){
 			gen1.x[i] (x[i]);
 			gen1.y[i] (y[i]);
 	}
@@ -39,16 +40,16 @@ int sc_main (int argc, char* argv[]){
 	// Monitor generated values
 	monitor monitor1("monitor_1");
 	monitor1.clk (tb_clk);
-	for(int i = 0; i < 8; i++){
+	for(int i = 0; i < NUMBER_OF_ADDERS; i++){
 		monitor1.x[i] (x[i]);
 		monitor1.y[i] (y[i]);
 	}
 	
 
 	// Creating Nbit_Adder module
-	nbit_adder nbitadder ("8bitadder", 8);
+	nbit_adder nbitadder ("Nbitadder", NUMBER_OF_ADDERS);
 	nbitadder.clk (tb_clk);
-	for (int i = 0; i < 8; i++){
+	for (int i = 0; i < NUMBER_OF_ADDERS; i++){
 		nbitadder.x[i]       (x[i]);
 		nbitadder.y[i]       (y[i]);
 		nbitadder.sum_out[i] (sum[i]);
